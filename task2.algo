@@ -1,0 +1,30 @@
+ALGORITHM task2
+VAR
+    set1 : ARRAY_OF INTEGER[];
+    set2 : ARRAY_OF INTEGER[];
+    sum:INTEGER:=0;
+BEGIN
+    Write("give the first set");
+    Read(set1);
+    Write("give the second set");
+    Read(set2);
+    FOR i FROM 0 TO set1.length STEP 1  DO
+        j:INTEGER:=0;
+        WHILE (set1[i]<>set2[j] AND j<set2.length) DO
+            j:=j+1;
+        END_WHILE
+        IF (j=set2.length) THEN
+            sum:=sum+set1[i];
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO set2.length STEP 1  DO
+        j:INTEGER:=0;
+        WHILE (set2[i]<>set1[j] AND j<set1.length) DO
+            j:=j+1;
+        END_WHILE
+        IF (j=set1.length) THEN
+            sum:=sum+set2[i];
+        END_IF
+    END_FOR
+    Write(sum);
+END

@@ -1,0 +1,26 @@
+ALGORITHM task1
+VAR
+    str:STRING[];
+    c1: INTEGER:=0;
+    c2: INTEGER:=0;
+    tab : ARRAY_OF CHAR[6];
+BEGIN
+    Write("give the sentence to treate");
+    Read(str);
+    tab:={a,e,i,o,u,y}
+    FOR i FROM 0 TO str.length STEP 1  DO
+        IF (str[i]="") THEN
+            c1:=c1+1;
+        END_IF 
+    END_FOR
+    c1:=c1+1;
+    FOR i FROM 0 TO 5 STEP 1  DO
+        FOR j FROM 0 TO str.length STEP 1  DO
+            IF (tab[i]=str[j]) THEN
+                c2=c2+1;
+            END_IF
+        END_FOR
+    END_FOR
+    Write(c1);
+    Write(c2);
+END
